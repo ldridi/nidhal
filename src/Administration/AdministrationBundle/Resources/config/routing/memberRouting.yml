@@ -1,0 +1,19 @@
+memberGestion:
+    path:     /all
+    defaults: { _controller: AdministrationBundle:Member/Member:index }
+
+redacteurGestion:
+    path:     /redacteurGestion
+    defaults: { _controller: AdministrationBundle:Member/Redacteur:index }
+
+memberProfile:
+    path:     /profile/{id}
+    defaults: { _controller: AdministrationBundle:Member/MemberProfile:profile }
+
+memberSupprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: AdministrationBundle:Member/MemberProfile:supprimer }
+
+memberNouveau:
+    path:     /nouveau
+    defaults: { _controller: AdministrationBundle:Member/MemberNouveau:nouveau }

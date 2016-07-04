@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>TypeCuisson list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomtypecuisson</th>
+                <th>Statuttypecuisson</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for typeCuisson in typeCuissons %}
+            <tr>
+                <td><a href="{{ path('typecuisson_show', { 'id': typeCuisson.id }) }}">{{ typeCuisson.id }}</a></td>
+                <td>{{ typeCuisson.nomTypeCuisson }}</td>
+                <td>{{ typeCuisson.statutTypeCuisson }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('typecuisson_show', { 'id': typeCuisson.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('typecuisson_edit', { 'id': typeCuisson.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('typecuisson_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

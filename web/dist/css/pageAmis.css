@@ -1,0 +1,297 @@
+h3.blocedFriend{
+  color: #bc735a;
+  font-size: 15px;
+}
+.text-right{
+    text-align: right;
+}
+.formInsideCarrousel {
+	background-color: transparent;
+    top: 0;
+}
+
+div.outerWrapper {
+     top: 0px; 
+}
+
+div.outerWrapperSearch{
+	padding: 20px 0;
+	background: #FFF;
+	border: 1px solid #ecebeb;
+
+    /*sift the container*/
+    max-width: 1116px;
+    position: relative;
+    left: -14px;
+}
+
+button.btn-search {
+    background-color: #c9532f;
+}
+button.btn-search:hover {
+    background-color: #c9532f;
+}
+select#inputProximite, input#inputSearch {
+    border: 1px solid #c9532f;
+}
+
+button.btn-search {
+    max-width: 156px;
+    margin-left: -82px;
+}
+
+div.outerWrapper div.center-content {
+    padding-left: 6px;
+    margin-right: 10px; 
+}
+div.outerWrapper div.center-content {
+        padding: 20px;
+            width: 100%;
+    max-width: 822px;
+}
+
+
+
+/********************************************************/
+body.amis_page .btn-group{
+    margin-bottom: 20px;
+}
+body.amis_page .btn-group .btn-filter {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #000;
+    background-color: transparent;
+    border-color: #dedede;
+    outline: none;
+    padding: 13px 45px;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 1.5px;
+
+}
+body.amis_page .btn-group .btn-filter.active{
+    color: #bf4e2b;
+    background: #f5f5f5;
+}
+body.amis_page .btn-group .btn-filter-medium {
+    padding: 13px 25px;
+    border-radius: 0;
+}
+body.amis_page .btn-group .btn-filter.noactive{
+    color: black;
+}
+body.amis_page .btn-group .btn-filter:hover {
+    background-color: #F5F5F5;
+    color: #bf4e2b;
+}
+body.amis_page .btn-group .btn-filter:active, 
+body.amis_page .btn-group .btn-filter.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+.memberArea{
+  /*for scrollbar*/
+    overflow: auto;
+    max-height: 650px;
+    
+        padding-left: 45px;
+}
+.theMember{
+  position: relative;
+     float: left; 
+    width: 27%;
+    max-width: 230px;
+    min-height: 93px;
+    background: #f7f7f7;
+    border: 1px solid #f4f4f4;
+        padding: 10px 6px;
+    margin: 15px;
+}
+.btn-add{
+  display: block;
+  position: absolute;
+      right: 3px;
+    top: 3px;
+  width: 21px;
+  height: 22px;
+  background: url(../img/ico-close.png) center center no-repeat;
+}
+.btn-add2{
+      border: 1px solid #F9A68C;
+    margin: 2px;
+    border-radius: 2px;
+    padding: 10px;
+  display: block;
+  position: absolute;
+      right: 3px;
+    top: 3px;
+  width: 21px;
+  height: 22px;
+  background: url(../img/add-profil-autre.png) center center no-repeat;
+}
+
+
+.theMember ul li span.name,.theMember ul li span.country{
+  font-size: 14.50px;
+  color: rgb( 0, 0, 0 );
+  line-height: 10px;
+  text-align: left;
+}
+.theMember ul li span.points{
+  font-size: 14.5px;
+  color: rgb( 208, 110, 80 );
+  line-height: 10px;
+  text-align: left;
+}
+.theMember ul li img{
+  vertical-align: bottom;
+}
+div.outerWrapper .menu-left {
+    padding: 12px 6px;
+}
+
+h3.commentmarche-heading{
+  font-size: 15px;
+  color: rgb( 0, 0, 0 );
+  line-height: 20px;
+
+}
+
+section.commentmarche-section p{
+  font-size: 17px;
+  color: rgb( 0, 0, 0 );
+  line-height: 22px;
+  font-weight: 300;
+  letter-spacing: 1.1px;
+  margin: 30px 0;
+}
+
+section.commentmarche-section hr{
+    background: #f5f5f5;
+    border: 1px solid #f5f5f5;
+}
+
+.amis_page .carousel-caption {
+    top: 5%;
+    font-size: 1em;
+}
+
+
+
+
+
+
+
+
+/*profile-settings*/
+.profile-settings .img-profile{
+    /*border: 3px solid #e5e4e3;*/
+    width: 124px;
+
+}
+.profile-settings .name{
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+}
+.profile-settings .inf{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 1.5px;
+}
+.profile-settings .statistics{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 11px 0;
+}
+.profile-settings .statistics img{
+    margin: 0 5px;
+}
+div.outerWrapper .menu-left .menu-left-heading{
+    font-size: 16px;
+    
+}
+div.outerWrapper .menu-left  section{
+    padding: 0 5px;
+    padding-left: 0;
+}
+div.outerWrapper .menu-left  section .img-amis,
+div.outerWrapper .menu-left  section .img-photos,
+div.outerWrapper .menu-left  section .img-lieu{
+    margin: 12px 0;
+}
+.img-lieu p{
+    font-size: 9px;
+    letter-spacing: 1.1px;
+}
+.para-lieu{
+    padding-left: 10px;
+}
+
+/*autre profil*/
+.adding-new{
+    color: #c9532f;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    margin-bottom: -7px;
+}
+
+
+
+a.setting,
+a.invite{
+    color: #c9532f;
+    font-size: 13px;
+        letter-spacing: 0.2px;
+    text-decoration: none;
+    
+}
+
+.user-s{
+    margin-bottom: -10px;
+    text-decoration:unset;
+}
+
+
+/*end autre profil*/
+
+body.amis_page .formInsideCarrousel{
+    padding: 30px 0px 4px;
+    position: relative;
+    /*bottom: 0;*/
+    width: 100%;
+}
+
+
+
+textarea::-webkit-input-placeholder {
+   color: #e0dddd;
+   font-size: 14px;
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+textarea::-moz-placeholder {  /* Firefox 19+ */
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+textarea:-ms-input-placeholder {  
+   color: #e0dddd;
+   font-size: 14px;  
+}
+

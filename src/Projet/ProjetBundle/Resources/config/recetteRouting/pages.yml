@@ -1,0 +1,3 @@
+application:
+    path:     /application
+    defaults: { _controller: "ProjetBundle:Pages:application" }

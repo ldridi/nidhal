@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for etablissement in etablissements %}
+        <img src="{{ asset(etablissement.image.webPath) }}">
+    {% endfor %}
+{% endblock %}

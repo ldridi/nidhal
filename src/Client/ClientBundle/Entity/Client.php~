@@ -1,0 +1,562 @@
+<?php
+// src/AppBundle/Entity/User.php
+
+namespace Client\ClientBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="client")
+ * @ORM\Entity(repositoryClass="Client\ClientBundle\Repository\ClientRepository")
+ */
+class Client extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setDateAjoutClient(new \DateTime);
+
+        // navigateur
+
+        if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
+            $navig='Internet explorer';
+        elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== FALSE) //For Supporting IE 11
+            $navig='Internet explorer';
+        elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE)
+            $navig='Mozilla Firefox';
+        elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE)
+            $navig='Google Chrome';
+        elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== FALSE)
+            $navig="Opera Mini";
+        elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
+            $navig="Opera";
+        elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE)
+            $navig="Safari";
+        else
+            $navig='autre';
+        $this->setNavigateurClient($navig);
+
+        // systeme d'exploitation
+
+        $user_agent = getenv("HTTP_USER_AGENT");
+
+        if (strpos($user_agent, "Win") !== FALSE)
+            $os = "Windows";
+        elseif ((strpos($user_agent, "Mac") !== FALSE) || (strpos($user_agent, "PPC") !== FALSE))
+            $os = "Mac";
+        elseif (strpos($user_agent, "Linux") !== FALSE)
+            $os = "Linux";
+        elseif (strpos($user_agent, "FreeBSD") !== FALSE)
+            $os = "FreeBSD";
+        elseif (strpos($user_agent, "SunOS") !== FALSE)
+            $os = "SunOS";
+        elseif (strpos($user_agent, "IRIX") !== FALSE)
+            $os = "IRIX";
+        elseif (strpos($user_agent, "BeOS") !== FALSE)
+            $os = "BeOS";
+        elseif (strpos($user_agent, "OS/2") !== FALSE)
+            $os = "OS/2";
+        elseif (strpos($user_agent, "AIX") !== FALSE)
+            $os = "AIX";
+        else
+            $os = "Autre";
+        $this->setOsClient($os);
+    }
+
+    /**
+     * @ORM\OneToOne(targetEntity="Administration\AdministrationBundle\Entity\Media", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $image;
+    
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_ajout_client", type="date")
+     */
+    private $dateAjoutClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="navigateur_client", type="string", length=100,nullable=true)
+     */
+    private $navigateurClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="os_client", type="string", length=100,nullable=true)
+     */
+    private $osClient;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_client", type="string", length=100,nullable=true)
+     */
+    private $nomClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom_client", type="string", length=100,nullable=true)
+     */
+    private $prenomClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse_client", type="string", length=200,nullable=true)
+     */
+    private $adresseClient;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sexe_client", type="string", length=100,nullable=true)
+     */
+    private $sexeClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_naissance_client", type="string", length=100,nullable=true)
+     */
+    private $dateNaissanceClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_client", type="text",nullable=true)
+     */
+    private $descriptionClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pays_client", type="string", length=100,nullable=true)
+     */
+    private $paysClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville_client", type="string", length=100,nullable=true)
+     */
+    private $villeClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mobile_client", type="string", length=100,nullable=true)
+     */
+    private $mobileClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fixe_client", type="string", length=100,nullable=true)
+     */
+    private $fixeClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fax_client", type="string", length=100,nullable=true)
+     */
+    private $faxClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="site_client", type="string", length=100,nullable=true)
+     */
+    private $siteClient;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="situation_client", type="string", length=100,nullable=true)
+     */
+    private $situationClient;
+
+    /**
+     * Set dateAjoutClient
+     *
+     * @param \DateTime $dateAjoutClient
+     * @return Client
+     */
+    public function setDateAjoutClient($dateAjoutClient)
+    {
+        $this->dateAjoutClient = $dateAjoutClient;
+
+        return $this;
+    }
+
+    /**
+     * Get dateAjoutClient
+     *
+     * @return \DateTime 
+     */
+    public function getDateAjoutClient()
+    {
+        return $this->dateAjoutClient;
+    }
+
+    /**
+     * Set navigateurClient
+     *
+     * @param string $navigateurClient
+     * @return Client
+     */
+    public function setNavigateurClient($navigateurClient)
+    {
+        $this->navigateurClient = $navigateurClient;
+
+        return $this;
+    }
+
+    /**
+     * Get navigateurClient
+     *
+     * @return string 
+     */
+    public function getNavigateurClient()
+    {
+        return $this->navigateurClient;
+    }
+
+    /**
+     * Set nomClient
+     *
+     * @param string $nomClient
+     * @return Client
+     */
+    public function setNomClient($nomClient)
+    {
+        $this->nomClient = $nomClient;
+
+        return $this;
+    }
+
+    /**
+     * Get nomClient
+     *
+     * @return string 
+     */
+    public function getNomClient()
+    {
+        return $this->nomClient;
+    }
+
+    /**
+     * Set prenomClient
+     *
+     * @param string $prenomClient
+     * @return Client
+     */
+    public function setPrenomClient($prenomClient)
+    {
+        $this->prenomClient = $prenomClient;
+
+        return $this;
+    }
+
+    /**
+     * Get prenomClient
+     *
+     * @return string 
+     */
+    public function getPrenomClient()
+    {
+        return $this->prenomClient;
+    }
+
+    /**
+     * Set adresseClient
+     *
+     * @param string $adresseClient
+     * @return Client
+     */
+    public function setAdresseClient($adresseClient)
+    {
+        $this->adresseClient = $adresseClient;
+
+        return $this;
+    }
+
+    /**
+     * Get adresseClient
+     *
+     * @return string 
+     */
+    public function getAdresseClient()
+    {
+        return $this->adresseClient;
+    }
+
+    /**
+     * Set sexeClient
+     *
+     * @param string $sexeClient
+     * @return Client
+     */
+    public function setSexeClient($sexeClient)
+    {
+        $this->sexeClient = $sexeClient;
+
+        return $this;
+    }
+
+    /**
+     * Get sexeClient
+     *
+     * @return string 
+     */
+    public function getSexeClient()
+    {
+        return $this->sexeClient;
+    }
+
+    /**
+     * Set dateNaissanceClient
+     *
+     * @param string $dateNaissanceClient
+     * @return Client
+     */
+    public function setDateNaissanceClient($dateNaissanceClient)
+    {
+        $this->dateNaissanceClient = $dateNaissanceClient;
+
+        return $this;
+    }
+
+    /**
+     * Get dateNaissanceClient
+     *
+     * @return string 
+     */
+    public function getDateNaissanceClient()
+    {
+        return $this->dateNaissanceClient;
+    }
+
+    /**
+     * Set descriptionClient
+     *
+     * @param string $descriptionClient
+     * @return Client
+     */
+    public function setDescriptionClient($descriptionClient)
+    {
+        $this->descriptionClient = $descriptionClient;
+
+        return $this;
+    }
+
+    /**
+     * Get descriptionClient
+     *
+     * @return string 
+     */
+    public function getDescriptionClient()
+    {
+        return $this->descriptionClient;
+    }
+
+
+    /**
+     * Set paysClient
+     *
+     * @param string $paysClient
+     * @return Client
+     */
+    public function setPaysClient($paysClient)
+    {
+        $this->paysClient = $paysClient;
+
+        return $this;
+    }
+
+    /**
+     * Get paysClient
+     *
+     * @return string 
+     */
+    public function getPaysClient()
+    {
+        return $this->paysClient;
+    }
+
+    /**
+     * Set villeClient
+     *
+     * @param string $villeClient
+     * @return Client
+     */
+    public function setVilleClient($villeClient)
+    {
+        $this->villeClient = $villeClient;
+
+        return $this;
+    }
+
+    /**
+     * Get villeClient
+     *
+     * @return string 
+     */
+    public function getVilleClient()
+    {
+        return $this->villeClient;
+    }
+
+    /**
+     * Set mobileClient
+     *
+     * @param string $mobileClient
+     * @return Client
+     */
+    public function setMobileClient($mobileClient)
+    {
+        $this->mobileClient = $mobileClient;
+
+        return $this;
+    }
+
+    /**
+     * Get mobileClient
+     *
+     * @return string 
+     */
+    public function getMobileClient()
+    {
+        return $this->mobileClient;
+    }
+
+    /**
+     * Set fixeClient
+     *
+     * @param string $fixeClient
+     * @return Client
+     */
+    public function setFixeClient($fixeClient)
+    {
+        $this->fixeClient = $fixeClient;
+
+        return $this;
+    }
+
+    /**
+     * Get fixeClient
+     *
+     * @return string 
+     */
+    public function getFixeClient()
+    {
+        return $this->fixeClient;
+    }
+
+    /**
+     * Set faxClient
+     *
+     * @param string $faxClient
+     * @return Client
+     */
+    public function setFaxClient($faxClient)
+    {
+        $this->faxClient = $faxClient;
+
+        return $this;
+    }
+
+    /**
+     * Get faxClient
+     *
+     * @return string 
+     */
+    public function getFaxClient()
+    {
+        return $this->faxClient;
+    }
+
+    /**
+     * Set siteClient
+     *
+     * @param string $siteClient
+     * @return Client
+     */
+    public function setSiteClient($siteClient)
+    {
+        $this->siteClient = $siteClient;
+
+        return $this;
+    }
+
+    /**
+     * Get siteClient
+     *
+     * @return string 
+     */
+    public function getSiteClient()
+    {
+        return $this->siteClient;
+    }
+
+    /**
+     * Set situationClient
+     *
+     * @param string $situationClient
+     * @return Client
+     */
+    public function setSituationClient($situationClient)
+    {
+        $this->situationClient = $situationClient;
+
+        return $this;
+    }
+
+    /**
+     * Get situationClient
+     *
+     * @return string 
+     */
+    public function getSituationClient()
+    {
+        return $this->situationClient;
+    }
+
+    /**
+     * Set osClient
+     *
+     * @param string $osClient
+     * @return Client
+     */
+    public function setOsClient($osClient)
+    {
+        $this->osClient = $osClient;
+
+        return $this;
+    }
+
+    /**
+     * Get osClient
+     *
+     * @return string 
+     */
+    public function getOsClient()
+    {
+        return $this->osClient;
+    }
+}

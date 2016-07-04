@@ -1,0 +1,284 @@
+
+.text-right{
+    text-align: right;
+}
+.formInsideCarrousel {
+	background-color: transparent;
+    top: 0;
+}
+
+div.outerWrapper {
+     top: 0px; 
+}
+
+div.outerWrapperSearch{
+	padding: 20px 0;
+	background: #FFF;
+	border: 1px solid #ecebeb;
+
+    /*sift the container*/
+    max-width: 1116px;
+    position: relative;
+    left: -14px;
+}
+
+button.btn-search {
+    background-color: #c9532f;
+}
+button.btn-search:hover {
+    background-color: #c9532f;
+}
+select#inputProximite, input#inputSearch {
+    border: 1px solid #c9532f;
+}
+
+button.btn-search {
+    max-width: 156px;
+    margin-left: -82px;
+}
+
+div.outerWrapper div.center-content {
+    /*padding-left: 0px;
+    padding-right: 0px;*/
+    padding: 20px 0;
+    margin-right: 10px; 
+}
+/*div.outerWrapper div.center-content {
+    padding-right: 20px;
+}
+*/
+
+/**/
+body.settings_page .btn-group{
+    margin-bottom: 20px;
+}
+body.settings_page .btn-group .btn-filter {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #000;/*c9532f*/
+    background-color: transparent;
+    border-color: #dedede;
+    outline: none;
+    padding: 13px 45px;
+    font-size: 11px;
+    text-align: center;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+body.settings_page .btn-group .btn-filter:hover {
+    /*background-color: #F5F5F5;*/
+    background: #faf9f9 !important;
+color: #cd532b;
+}
+body.settings_page .btn-group .btn-filter:active {
+    background-image: none;/*#faf9f9*/
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #c9532f;/*c9532f*/
+}
+body.settings_page .btn-group .btn-filter.active {
+    background: #faf9f9 !important;/*#faf9f9*/
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #cd532b;/*c9532f*/
+}
+.settings_page .setting-sub{
+  font-size: 14.96px;
+  color: rgb( 2, 2, 2 );
+}
+
+.settings_page .secu-form{
+    width: 95%;
+}
+body.settings_page form label{
+    color: #020202;
+    font-weight: 400;
+}
+body.settings_page input, body.settings_page select#settingVille{
+    border-radius: 0;
+    height: 40px;
+}
+body.settings_page  form .btn-settings{
+    background:#cd532b;
+    padding: 8px 25px;
+    color: white;
+    border-radius: 0;
+}
+.sub-form-left{
+    text-align:left;
+}
+.sub-form-right{
+    text-align:right;
+}
+
+
+
+
+
+
+/*profile-settings*/
+.profile-settings .img-profile{
+    /*border: 3px solid #e5e4e3;*/
+    width: 124px;
+
+}
+.profile-settings .name{
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+}
+.profile-settings .inf{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 1.5px;
+}
+.profile-settings .statistics{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 11px 0;
+}
+.profile-settings .statistics img{
+    margin: 0 5px;
+}
+div.outerWrapper .menu-left .menu-left-heading{
+    font-size: 16px;
+    
+}
+div.outerWrapper .menu-left  section{
+    padding: 0 5px;
+    padding-left: 0;
+}
+div.outerWrapper .menu-left  section .img-amis,
+div.outerWrapper .menu-left  section .img-photos,
+div.outerWrapper .menu-left  section .img-lieu{
+    margin: 12px 0;
+}
+.img-lieu p{
+    font-size: 9px;
+    letter-spacing: 1.1px;
+}
+.para-lieu{
+    padding-left: 10px;
+}
+
+/*autre profil*/
+.adding-new{
+    color: #c9532f;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    margin-bottom: -7px;
+}
+
+a.add-profil-autre,
+a.add-new-msg{
+    color: #c9532f;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    border: 1px solid #FFAF95;
+}
+a.add-profil-autre:hover,
+a.add-new-msg:hover{
+    text-decoration: none;
+    color: #c9532f;
+}
+
+a.setting,
+a.invite{
+    color: #c9532f;
+    font-size: 13px;
+        letter-spacing: 0.2px;
+    text-decoration: none;
+    
+}
+
+.user-s{
+    margin-bottom: -10px;
+    text-decoration:unset;
+}
+
+
+/*end autre profil*/
+
+body.settings_page .formInsideCarrousel{
+    padding: 30px 0px 4px;
+    position: relative;
+    /*bottom: 0;*/
+    width: 100%;
+}
+
+
+body.settings_page .postUtilities{margin-top: 24px;margin-bottom: 24px;    margin-left: 10px;}
+body.settings_page .postUtilities li{ margin: 0;padding: 0;display: inline;}
+body.settings_page .postUtilities li a{ padding: 3% 5.9%;background:#f6f6f6; border-right:1px solid  #e8e7e7;
+color: #cccccc; font-size: 12px;}
+
+body.settings_page .postUtilities li a.shareBtnOffline{ color: #737373;}
+
+.fbphotobox-container-right{
+    height: auto !important;
+}
+
+
+
+textarea::-webkit-input-placeholder {
+   color: #e0dddd;
+   font-size: 14px;
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+textarea::-moz-placeholder {  /* Firefox 19+ */
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+textarea:-ms-input-placeholder {  
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+@media (min-width: 1024px)  and (max-width: 1191px)  {
+    .settings_page .thumbnail a i {
+        margin-right: -55px;
+        }
+
+}
+/*@media (max-width: 1024px) {
+    .settings_page .thumbnail a i {
+        top: 9%;
+        right: 26%;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .settings_page .thumbnail a i {
+        top: 9%;
+        right: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .settings_page .thumbnail a i {
+        top: 9%;
+        right: 31%;
+    }
+}
+
+@media (max-width: 425px) {
+    .settings_page .thumbnail a i {
+        top: 9%;
+        right: 29%;
+    }
+}*/
+

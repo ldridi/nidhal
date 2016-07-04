@@ -1,0 +1,41 @@
+{% extends 'layout/layout.html.twig' %}
+{% block body %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>Liste des Utilisateurs <a href="{{ path('client_new') }}">Ajouter un membre</a></h2>
+
+        </div>
+    </div>
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            {% for redacteur in redacteurs %}
+            {% if(redacteur.hasRole('ROLE_REDACTEUR') ) %}
+            <div class="col-lg-4">
+                <div class="contact-box">
+                    <a href="{{ path('memberProfile', {'id':redacteur.id}) }}">
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <img alt="image" class="m-t-xs img-responsive" src="{{ asset(redacteur.image.webPath) }}" style="width: 70px;height: 70px;border-radius: 70px;">
+                                <div class="m-t-xs font-bold">Rédacteur</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <h3><strong>{{ redacteur.username }}</strong></h3>
+                            <p><i class="fa fa-map-marker"></i> {{ redacteur.adresseClient }}</p>
+                            <address>
+                                <strong>Twitter, Inc.</strong><br>
+                                795 Folsom Ave, Suite 600<br>
+                                San Francisco, CA 94107<br>
+                                <abbr title="Phone">P:</abbr> {{ redacteur.mobileClient }}
+                            </address>
+                        </div>
+                        <div class="clearfix"></div>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+{% endblock %}

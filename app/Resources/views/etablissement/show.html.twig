@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Etablissement</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etablissement.id }}</td>
+            </tr>
+            <tr>
+                <th>Nometablissement</th>
+                <td>{{ etablissement.nomEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Adresseetablissement</th>
+                <td>{{ etablissement.adresseEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Villeetablissement</th>
+                <td>{{ etablissement.villeEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Postaleetablissement</th>
+                <td>{{ etablissement.postaleEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Teloneetablissement</th>
+                <td>{{ etablissement.telOneEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Teltwoetablissement</th>
+                <td>{{ etablissement.telTwoEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Telthreeetablissement</th>
+                <td>{{ etablissement.telThreeEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Emailetablissement</th>
+                <td>{{ etablissement.emailEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Webetablissement</th>
+                <td>{{ etablissement.webEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Facebooketablissement</th>
+                <td>{{ etablissement.facebookEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Horraireetablissement</th>
+                <td>{{ etablissement.horraireEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Latetablissement</th>
+                <td>{{ etablissement.latEtablissement }}</td>
+            </tr>
+            <tr>
+                <th>Longetablissement</th>
+                <td>{{ etablissement.longEtablissement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('etablissement_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('etablissement_edit', { 'id': etablissement.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

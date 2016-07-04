@@ -1,0 +1,70 @@
+<?php
+
+namespace Administration\AdministrationBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Test
+ *
+ * @ORM\Table(name="test")
+ * @ORM\Entity(repositoryClass="Administration\AdministrationBundle\Repository\TestRepository")
+ */
+class Test
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Administration\AdministrationBundle\Entity\Media", cascade={"persist","remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_test", type="string", length=255)
+     */
+    private $nomTest;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomTest
+     *
+     * @param string $nomTest
+     * @return Test
+     */
+    public function setNomTest($nomTest)
+    {
+        $this->nomTest = $nomTest;
+
+        return $this;
+    }
+
+    /**
+     * Get nomTest
+     *
+     * @return string 
+     */
+    public function getNomTest()
+    {
+        return $this->nomTest;
+    }
+}

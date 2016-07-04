@@ -1,0 +1,261 @@
+
+.text-right{
+    text-align: right;
+}
+.formInsideCarrousel {
+	background-color: transparent;
+    top: 0;
+}
+
+div.outerWrapper {
+     top: 0px; 
+}
+
+div.outerWrapperSearch{
+	padding: 20px 0;
+	background: #FFF;
+	border: 1px solid #ecebeb;
+
+    /*sift the container*/
+    max-width: 1116px;
+    position: relative;
+    left: -14px;
+}
+
+button.btn-search {
+    background-color: #c9532f;
+}
+button.btn-search:hover {
+    background-color: #c9532f;
+}
+select#inputProximite, input#inputSearch {
+    border: 1px solid #c9532f;
+}
+
+button.btn-search {
+    max-width: 156px;
+    margin-left: -82px;
+}
+
+div.outerWrapper div.center-content {
+    /*padding-left: 0px;
+    padding-right: 0px;*/
+    padding: 20px 0;
+    margin-right: 10px; 
+}
+/*div.outerWrapper div.center-content {
+    padding-right: 20px;
+}
+*/
+
+/**/
+.invite_page .heading-top{
+    padding: 15px 27px;
+    border-bottom: 1px solid #faf8f8;
+}
+.invite_page a.invite-btn-fb1{
+    background: url(../img/invite-btn-fb1.png) center center no-repeat;
+    width: 298px;
+    height: 44px;
+}
+.invite_page a.invite-btn-fb2{
+    background: url(../img/invite-btn-fb2.png) center center no-repeat;
+    width: 298px;
+    height: 44px;
+}
+
+.invite_page a.invite-btn-fb3{
+    background: url(../img/invite-btn-fb3.png) center center no-repeat;
+    width: 298px;
+    height: 44px;
+}
+.invite_page a.invite-btn-fb4{
+    background: url(../img/invite-btn-fb4.png) center center no-repeat;
+    width: 298px;
+    height: 44px;
+}
+
+.invite_page .invitation-block{
+  margin:60px 0;
+}
+
+
+.invite_page .invitation-block p{
+  font-size: 11.96px;
+  color: rgb( 0, 0, 0 );
+}
+.invite_page .inv-last-para{
+  font-size: 12.96px;
+  color: rgb( 0, 0, 0 );
+  text-align: center;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+
+}
+
+
+
+
+/*profile-settings*/
+.profile-settings .img-profile{
+    /*border: 3px solid #e5e4e3;*/
+    width: 124px;
+
+}
+.profile-settings .name{
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+}
+.profile-settings .inf{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 1.5px;
+}
+.profile-settings .statistics{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 11px 0;
+}
+.profile-settings .statistics img{
+    margin: 0 5px;
+}
+div.outerWrapper .menu-left .menu-left-heading{
+    font-size: 16px;
+    
+}
+div.outerWrapper .menu-left  section{
+    padding: 0 5px;
+    padding-left: 0;
+}
+div.outerWrapper .menu-left  section .img-amis,
+div.outerWrapper .menu-left  section .img-photos,
+div.outerWrapper .menu-left  section .img-lieu{
+    margin: 12px 0;
+}
+.img-lieu p{
+    font-size: 9px;
+    letter-spacing: 1.1px;
+}
+.para-lieu{
+    padding-left: 10px;
+}
+
+/*autre profil*/
+.adding-new{
+    color: #c9532f;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    margin-bottom: -7px;
+}
+
+a.add-profil-autre,
+a.add-new-msg{
+    color: #c9532f;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    border: 1px solid #FFAF95;
+}
+a.add-profil-autre:hover,
+a.add-new-msg:hover{
+    text-decoration: none;
+    color: #c9532f;
+}
+
+a.setting,
+a.invite{
+    color: #c9532f;
+    font-size: 13px;
+        letter-spacing: 0.2px;
+    text-decoration: none;
+    
+}
+
+.user-s{
+    margin-bottom: -10px;
+    text-decoration:unset;
+}
+
+
+/*end autre profil*/
+
+body.invite_page .formInsideCarrousel{
+    padding: 30px 0px 4px;
+    position: relative;
+    /*bottom: 0;*/
+    width: 100%;
+}
+
+
+body.invite_page .postUtilities{margin-top: 24px;margin-bottom: 24px;    margin-left: 10px;}
+body.invite_page .postUtilities li{ margin: 0;padding: 0;display: inline;}
+body.invite_page .postUtilities li a{ padding: 3% 5.9%;background:#f6f6f6; border-right:1px solid  #e8e7e7;
+color: #cccccc; font-size: 12px;}
+
+body.invite_page .postUtilities li a.shareBtnOffline{ color: #737373;}
+
+.fbphotobox-container-right{
+    height: auto !important;
+}
+
+
+
+textarea::-webkit-input-placeholder {
+   color: #e0dddd;
+   font-size: 14px;
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+textarea::-moz-placeholder {  /* Firefox 19+ */
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+textarea:-ms-input-placeholder {  
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+@media (min-width: 1024px)  and (max-width: 1191px)  {
+    .invite_page .thumbnail a i {
+        margin-right: -55px;
+        }
+
+}
+/*@media (max-width: 1024px) {
+    .invite_page .thumbnail a i {
+        top: 9%;
+        right: 26%;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .invite_page .thumbnail a i {
+        top: 9%;
+        right: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .invite_page .thumbnail a i {
+        top: 9%;
+        right: 31%;
+    }
+}
+
+@media (max-width: 425px) {
+    .invite_page .thumbnail a i {
+        top: 9%;
+        right: 29%;
+    }
+}*/
+

@@ -1,0 +1,37 @@
+recette:
+    path:     /
+    defaults: { _controller: "ProjetBundle:Recette:recette" }
+
+recettedetails:
+    path:     /details/{recette}
+    defaults: { _controller: "ProjetBundle:Recette:detailsRecette" }
+
+recetteJSON:
+    path:     /recetteJSON
+    defaults: { _controller: "ProjetBundle:Recette:recetteJSON" }
+    options:
+        expose: true
+
+recettePrixJSON:
+    path:     /recettePrixJSON/{prix}
+    defaults: { _controller: "ProjetBundle:Recette:recettePrixJSON" }
+    options:
+        expose: true
+
+prixJSON:
+    path:     /prixJSON
+    defaults: { _controller: "ProjetBundle:Recette:prixJSON" }
+    options:
+        expose: true
+
+recetteNationaliteJSON:
+    path:     /recetteNationaliteJSON/{nationalite}
+    defaults: { _controller: "ProjetBundle:Recette:recetteNationaliteJSON" }
+    options:
+        expose: true
+
+nationaliteJSON:
+    path:     /nationaliteJSON
+    defaults: { _controller: "ProjetBundle:Recette:nationaliteJSON" }
+    options:
+        expose: true

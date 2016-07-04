@@ -1,0 +1,264 @@
+
+.text-right{
+    text-align: right;
+}
+.formInsideCarrousel {
+	background-color: transparent;
+    top: 0;
+}
+
+div.outerWrapper {
+     top: 0px; 
+}
+
+.place-ico{
+    vertical-align: sub;
+    margin-right: 4px;
+}
+
+div.outerWrapperSearch{
+	padding: 20px 0;
+	background: #FFF;
+	border: 1px solid #ecebeb;
+
+    /*sift the container*/
+    max-width: 1116px;
+    position: relative;
+    left: -14px;
+}
+
+button.btn-search {
+    background-color: #c9532f;
+}
+button.btn-search:hover {
+    background-color: #c9532f;
+}
+select#inputProximite, input#inputSearch {
+    border: 1px solid #c9532f;
+}
+
+button.btn-search {
+    max-width: 156px;
+    margin-left: -82px;
+}
+
+div.outerWrapper div.center-content {
+    /*padding-left: 0px;
+    padding-right: 0px;*/
+    padding: 20px 0;
+    margin-right: 10px; 
+}
+/*div.outerWrapper div.center-content {
+    padding-right: 20px;
+}
+*/
+
+/**/
+.lieux_page .center-content .media{
+    padding: 30px 27px;
+    border: 1px solid #bcbcbc;
+    width: 95%;
+    margin: 20px auto;
+    position:relative;
+}
+.lieux_page .media .ring-img{
+       /*margin-top: 29px;*/
+       margin-right: 15px;
+}
+.lieux_page .media  img.ico{
+    /*margin-right: 6px;*/
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.lieux_page .media h5.media-heading{
+    font-size: 14px;
+    color: #cd532b;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+.lieux_page  .center-content .media .media-body p{
+    color: #020202;
+    font-weight: 100;
+    margin-top: 13px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+.lieux_page .media .media-object{
+    border:1px solid #c6c5c5;
+}
+.lieux_page .media .media-body p.first-para{
+    margin-top: 0;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    text-align: center;
+    
+    line-height: 20px;
+}
+
+
+
+/*profile-settings*/
+.profile-settings .img-profile{
+    /*border: 3px solid #e5e4e3;*/
+    width: 124px;
+
+}
+.profile-settings .name{
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 1.5px;
+}
+.profile-settings .inf{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 1.5px;
+}
+.profile-settings .statistics{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 11px 0;
+}
+.profile-settings .statistics img{
+    margin: 0 5px;
+}
+div.outerWrapper .menu-left .menu-left-heading{
+    font-size: 16px;
+    
+}
+div.outerWrapper .menu-left  section{
+    padding: 0 5px;
+    padding-left: 0;
+}
+div.outerWrapper .menu-left  section .img-amis,
+div.outerWrapper .menu-left  section .img-photos,
+div.outerWrapper .menu-left  section .img-lieu{
+    margin: 12px 0;
+}
+.img-lieu p{
+    font-size: 9px;
+    letter-spacing: 1.1px;
+}
+.para-lieu{
+    padding-left: 10px;
+}
+
+/*autre profil*/
+.adding-new{
+    color: #c9532f;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    margin-bottom: -7px;
+}
+
+a.add-profil-autre,
+a.add-new-msg{
+    color: #c9532f;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    border: 1px solid #FFAF95;
+}
+a.add-profil-autre:hover,
+a.add-new-msg:hover{
+    text-decoration: none;
+    color: #c9532f;
+}
+
+a.setting,
+a.invite{
+    color: #c9532f;
+    font-size: 13px;
+        letter-spacing: 0.2px;
+    text-decoration: none;
+    
+}
+
+.user-s{
+    margin-bottom: -10px;
+    text-decoration:unset;
+}
+
+
+/*end autre profil*/
+
+body.lieux_page .formInsideCarrousel{
+    padding: 30px 0px 4px;
+    position: relative;
+    /*bottom: 0;*/
+    width: 100%;
+}
+
+
+body.lieux_page .postUtilities{margin-top: 24px;margin-bottom: 24px;    margin-left: 10px;}
+body.lieux_page .postUtilities li{ margin: 0;padding: 0;display: inline;}
+body.lieux_page .postUtilities li a{ padding: 3% 5.9%;background:#f6f6f6; border-right:1px solid  #e8e7e7;
+color: #cccccc; font-size: 12px;}
+
+body.lieux_page .postUtilities li a.shareBtnOffline{ color: #737373;}
+
+.fbphotobox-container-right{
+    height: auto !important;
+}
+
+
+
+textarea::-webkit-input-placeholder {
+   color: #e0dddd;
+   font-size: 14px;
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+textarea::-moz-placeholder {  /* Firefox 19+ */
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+textarea:-ms-input-placeholder {  
+   color: #e0dddd;
+   font-size: 14px;  
+}
+
+@media (min-width: 1024px)  and (max-width: 1191px)  {
+    .lieux_page .thumbnail a i {
+        margin-right: -55px;
+        }
+
+}
+/*@media (max-width: 1024px) {
+    .lieux_page .thumbnail a i {
+        top: 9%;
+        right: 26%;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .lieux_page .thumbnail a i {
+        top: 9%;
+        right: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .lieux_page .thumbnail a i {
+        top: 9%;
+        right: 31%;
+    }
+}
+
+@media (max-width: 425px) {
+    .lieux_page .thumbnail a i {
+        top: 9%;
+        right: 29%;
+    }
+}*/
+

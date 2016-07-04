@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+        <link href="{{ asset('dist/css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('dist/css/jquery.raty.css') }}" rel="stylesheet">
+        <link href="{{ asset('dist/css/jquery.mCustomScrollbar.css') }}" rel="stylesheet" />
+        <link href="{{ asset('dist/css/jquery-ui.css') }}" rel="stylesheet" >
+        <link href="{{ asset('dist/css/all.css') }}" rel="stylesheet"  />
+        <link href="{{ asset('dist/css/select2.min.css') }}" rel="stylesheet"  />
+
+        <link href="{{ asset('dist/css/jquery.fancybox.css') }}" rel="stylesheet" >
+        <link href="{{ asset('dist/css/owl.carousel.css') }}" rel="stylesheet" >
+        <link href="{{ asset('dist/css/owl.theme.css') }}" rel="stylesheet" >
+        <link href="{{ asset('dist/css/main.css') }}" rel="stylesheet" >
+        <link href="{{ asset('dist/css/restau-filter.css') }}" rel="stylesheet" >
+        <link href="{{ asset('dist/css/single-recette.css') }}" rel="stylesheet">
+        <link href="{{ asset('dist/css/application.css') }}" rel="stylesheet" >
+
+    </head>
+    <body class="restaut_filter single-recette">
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- logo -->
+                    <a href="#"> <img src="{{ asset('dist/img/logo-web.png') }}" class="img-responsive logo" alt="logo"> </a>
+                </div>
+                <div class="col-md-8" >
+
+                    <!-- <a href="#" class="btn-compt pull-right"> <span class="btn-compt-icon"></span> Mon compte </a> -->
+                    <div class="social pull-right">
+                        <ul class="list-inline pull-left theNavigation">
+                            <li class="theName"> Bonjour Monsieur <span><a href="#">NAME DOE</a></span> </li>
+                            <li class="myNavigation">
+                                <!-- <div> <a href="#"> <img src="dist/img/online-profil.png" alt="profil"> <span>Profile</span></a> </div> -->
+                                <div>  <a href="#"><span class="notifs">4</span><img src="{{ asset('dist/img/online-messages.png') }}" alt="messages"> <span>Message</span></a> </div>
+                                <div> <a href="#"><img src="{{ asset('dist/img/online-notif.png') }}" alt="notif"><span>Notification</span></a> </div>
+                                <div> <a href="#"><img src="{{ asset('dist/img/online-amis.png') }}" alt="notif"><span>Amis</span></a> </div>
+                            </li>
+                            <li class="list-inline  theNavigationIMG">
+                                <a href="#"><img src="{{ asset('dist/img/user-foto.png') }}" alt=""></a>
+                            </li>
+                        </ul>
+
+                        <!-- <ul class="list-inline  theNavigationIMG">
+                          <li> <img src="dist/img/user-foto.png" alt=""> </li>
+                        </ul> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav role="navigation" class="navbar navbar-default ">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-left">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="#" class="navbar-brand">Brand</a> -->
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav theNav">
+                <!--  -->
+                <li class="dropdown subSubMenu">
+                    <a data-toggle="dropdown" class="dropdown-toggle hidden-md hidden-lg" href="#">Recettes <b class="caret"></b></a>
+                    <ul role="menu" class="dropdown-menu hidden-md hidden-lg ">
+                        <li><a href="#">Plat Principal</a></li>
+                        <li><a href="#">Dessert & Cocktails </a></li>
+                        <li><a href="#">Ingrédients</a></li>
+                        <li><a href="#">Thèmes</a></li>
+
+                        <li><a href="#">Recette6 </a></li>
+                        <li><a href="#">Recette7 </a></li>
+                        <li><a href="#">Recette9 </a></li>
+                        <li><a href="#">Recette9 </a></li>
+                    </ul>
+                </li>
+                <!--  -->
+                <li><a href="#"> <img src="{{ asset('dist/img/restauIcon.png') }}" alt=""></a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Restaurants</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Salons de thé & Brasseries</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Snacks & Pizzerias</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Patisseries</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Bars & Clubs</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Glaciers & Yaourties</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Dragées & chocolat</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Recette</a></li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="list-inline center-block text-center hidden-sm hidden-xs menu-top-carrousel">
+        <li><a href="#">Entrée</a>   </li>
+        <li class="divider-vertical"></li>
+        <li><a href="#">Plat Principal</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#">Dessert & Cocktails</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#">Ingrédients</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#">Thèmes</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#">Recette6</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#">Recette7</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#">Recette8</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#">Recette9</a></li>
+    </ul>
+
+
+        {% block body %}{% endblock %}
+
+    <footer>
+        <div class="container">
+            <p class="center-block text-center rejoin">Rejoignez-nous sur</p>
+
+            <ul class="list-inline center-block text-center footerSocials">
+                <li> <a href="#"> <img src="{{ asset('dist/img/icfb.png') }}" alt=""> </a> </li>
+                <li> <a href="#"> <img src="{{ asset('dist/img/icogm.png') }}" alt=""> </a> </li>
+                <li> <a href="#"> <img src="{{ asset('dist/img/icotwiter.png') }}" alt=""> </a> </li>
+                <li> <a href="#"> <img src="{{ asset('dist/img/icopLin.png') }}" alt=""> </a> </li>
+                <li> <a href="#"> <img src="{{ asset('dist/img/icoprin.png') }}" alt=""> </a> </li>
+                <li> <a href="#"> <img src="{{ asset('dist/img/icoYou.png') }}" alt=""> </a> </li>
+                <li> <a href="#"> <img src="{{ asset('dist/img/icoy.png') }}" alt=""> </a> </li>
+            </ul>
+
+
+            <ul class="list-inline center-block text-center footerLinks">
+                <li> <a href="#"> Qui somme nous </a> </li>
+                <li> - </li>
+                <li> <a href="#"> Contactez­-nous </a> </li>
+                <li> - </li>
+                <li> <a href="#"> Plan du site </a> </li>
+            </ul>
+
+
+        </div>
+
+        <div class="subFooter">
+            Copyright © 2016 trois-fourchettes.com.all rights reserved.
+        </div>
+
+    </footer>
+    <div id="topcontrol" class="glyphicon glyphicon-chevron-up" title="top">
+    </div>
+        <script src="{{ asset('dist/js/jquery.min.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="{{ asset('dist/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('dist/js/jquery.raty.js') }}"></script>
+        <script src="{{ asset('dist/js/jquery.mCustomScrollbar.js') }}"></script>
+        <script src="{{ asset('dist/js/icheck.min.js') }}"></script>
+        <script src="{{ asset('dist/js/select2.min.js') }}"></script>
+        <script src="{{ asset('dist/js/skrollr.min.js') }}"></script>
+        <script src="{{ asset('dist/js/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('dist/js/jquery.mousewheel-3.0.6.min.js') }}"></script>
+        <script src="{{ asset('dist/js/jquery.fancybox.js') }}"></script>
+        <script src="{{ asset('dist/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('dist/js/main.js') }}"></script>
+        <script src="{{ asset('js/scriptProjet.js') }}"></script>
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+        <script>
+            $(document).ready(function() {
+
+                $("#owl-demo").owlCarousel({
+
+                    autoPlay: 3000, //Set AutoPlay to 3 seconds
+                    navigation : true, // Show next and prev buttons
+                    items : 4,
+                    itemsDesktop : [1199,3],
+                    itemsDesktopSmall : [979,3]
+
+
+
+                });
+
+            });
+
+            function initMap() {
+
+                var mapOptions = {
+                    center: new google.maps.LatLng(36.7581145, 10.0169723),
+                    zoom: 11,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                map = new google.maps.Map(document.getElementById("map"),
+                        mapOptions);
+
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnfmZLc6WfOKPBccDI9Y4v1NbhSwYarYI&signed_in=true&callback=initMap"
+                async defer>
+        </script>
+        <script src="{{ asset('js/location.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+
+    </body>
+</html>

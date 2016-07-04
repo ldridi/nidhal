@@ -1,0 +1,1072 @@
+<?php
+
+namespace Administration\AdministrationBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+/**
+ * Etablissement
+ *
+ * @ORM\Table(name="etablissement")
+ * @ORM\Entity(repositoryClass="Administration\AdministrationBundle\Repository\EtablissementRepository")
+ */
+class Etablissement
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Administration\AdministrationBundle\Entity\Specialite", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false,onDelete="CASCADE")
+     */
+    private $specialite;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Administration\AdministrationBundle\Entity\Ambiance", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false,onDelete="CASCADE")
+     */
+    private $ambiance;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Administration\AdministrationBundle\Entity\Categorie", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false,onDelete="CASCADE")
+     */
+    private $categorie;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Administration\AdministrationBundle\Entity\Filtre", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false,onDelete="CASCADE")
+     */
+    private $filtre;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Administration\AdministrationBundle\Entity\Media", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $image;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Administration\AdministrationBundle\Entity\Media", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $carte;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_etablissement", type="string", length=255)
+     */
+    private $nomEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse_etablissement", type="string", length=255)
+     */
+    private $adresseEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville_etablissement", type="string", length=255)
+     */
+    private $villeEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="postale_etablissement", type="string", length=255)
+     */
+    private $postaleEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telOne_etablissement", type="string", length=255)
+     */
+    private $telOneEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telTwo_etablissement", type="string", length=255)
+     */
+    private $telTwoEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telThree_etablissement", type="string", length=255)
+     */
+    private $telThreeEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_etablissement", type="string", length=255)
+     */
+    private $emailEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="web_etablissement", type="string", length=255)
+     */
+    private $webEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facebook_etablissement", type="string", length=255)
+     */
+    private $facebookEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lat_etablissement", type="string", length=255)
+     */
+    private $latEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="long_etablissement", type="string", length=255)
+     */
+    private $longEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="from_lundi", type="string", length=255)
+     */
+    private $fromLundi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="to_lundi", type="string", length=255)
+     */
+    private $toLundi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="from_mardi", type="string", length=255)
+     */
+    private $fromMardi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="to_mardi", type="string", length=255)
+     */
+    private $toMardi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="from_mercredi", type="string", length=255)
+     */
+    private $fromMercredi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="to_mercredi", type="string", length=255)
+     */
+    private $toMercredi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fromjeudi", type="string", length=255)
+     */
+    private $fromjeudi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="to_jeudi", type="string", length=255)
+     */
+    private $toJeudi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="from_vendredi", type="string", length=255)
+     */
+    private $fromVendredi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="to_vendredi", type="string", length=255)
+     */
+    private $toVendredi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="from_samedi", type="string", length=255)
+     */
+    private $fromSamedi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="to_samedi", type="string", length=255)
+     */
+    private $toSamedi;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="from_dimanche", type="string", length=255)
+     */
+    private $fromDimanche;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="to_dimanche", type="string", length=255)
+     */
+    private $toDimanche;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomEtablissement
+     *
+     * @param string $nomEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setNomEtablissement($nomEtablissement)
+    {
+        $this->nomEtablissement = $nomEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get nomEtablissement
+     *
+     * @return string
+     */
+    public function getNomEtablissement()
+    {
+        return $this->nomEtablissement;
+    }
+
+    /**
+     * Set adresseEtablissement
+     *
+     * @param string $adresseEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setAdresseEtablissement($adresseEtablissement)
+    {
+        $this->adresseEtablissement = $adresseEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get adresseEtablissement
+     *
+     * @return string
+     */
+    public function getAdresseEtablissement()
+    {
+        return $this->adresseEtablissement;
+    }
+
+    /**
+     * Set villeEtablissement
+     *
+     * @param string $villeEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setVilleEtablissement($villeEtablissement)
+    {
+        $this->villeEtablissement = $villeEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get villeEtablissement
+     *
+     * @return string
+     */
+    public function getVilleEtablissement()
+    {
+        return $this->villeEtablissement;
+    }
+
+    /**
+     * Set postaleEtablissement
+     *
+     * @param string $postaleEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setPostaleEtablissement($postaleEtablissement)
+    {
+        $this->postaleEtablissement = $postaleEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get postaleEtablissement
+     *
+     * @return string
+     */
+    public function getPostaleEtablissement()
+    {
+        return $this->postaleEtablissement;
+    }
+
+    /**
+     * Set telOneEtablissement
+     *
+     * @param string $telOneEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setTelOneEtablissement($telOneEtablissement)
+    {
+        $this->telOneEtablissement = $telOneEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get telOneEtablissement
+     *
+     * @return string
+     */
+    public function getTelOneEtablissement()
+    {
+        return $this->telOneEtablissement;
+    }
+
+    /**
+     * Set telTwoEtablissement
+     *
+     * @param string $telTwoEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setTelTwoEtablissement($telTwoEtablissement)
+    {
+        $this->telTwoEtablissement = $telTwoEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get telTwoEtablissement
+     *
+     * @return string
+     */
+    public function getTelTwoEtablissement()
+    {
+        return $this->telTwoEtablissement;
+    }
+
+    /**
+     * Set telThreeEtablissement
+     *
+     * @param string $telThreeEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setTelThreeEtablissement($telThreeEtablissement)
+    {
+        $this->telThreeEtablissement = $telThreeEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get telThreeEtablissement
+     *
+     * @return string
+     */
+    public function getTelThreeEtablissement()
+    {
+        return $this->telThreeEtablissement;
+    }
+
+    /**
+     * Set emailEtablissement
+     *
+     * @param string $emailEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setEmailEtablissement($emailEtablissement)
+    {
+        $this->emailEtablissement = $emailEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get emailEtablissement
+     *
+     * @return string
+     */
+    public function getEmailEtablissement()
+    {
+        return $this->emailEtablissement;
+    }
+
+    /**
+     * Set webEtablissement
+     *
+     * @param string $webEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setWebEtablissement($webEtablissement)
+    {
+        $this->webEtablissement = $webEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get webEtablissement
+     *
+     * @return string
+     */
+    public function getWebEtablissement()
+    {
+        return $this->webEtablissement;
+    }
+
+    /**
+     * Set facebookEtablissement
+     *
+     * @param string $facebookEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setFacebookEtablissement($facebookEtablissement)
+    {
+        $this->facebookEtablissement = $facebookEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get facebookEtablissement
+     *
+     * @return string
+     */
+    public function getFacebookEtablissement()
+    {
+        return $this->facebookEtablissement;
+    }
+
+    /**
+     * Set latEtablissement
+     *
+     * @param string $latEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setLatEtablissement($latEtablissement)
+    {
+        $this->latEtablissement = $latEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get latEtablissement
+     *
+     * @return string
+     */
+    public function getLatEtablissement()
+    {
+        return $this->latEtablissement;
+    }
+
+    /**
+     * Set longEtablissement
+     *
+     * @param string $longEtablissement
+     *
+     * @return Etablissement
+     */
+    public function setLongEtablissement($longEtablissement)
+    {
+        $this->longEtablissement = $longEtablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get longEtablissement
+     *
+     * @return string
+     */
+    public function getLongEtablissement()
+    {
+        return $this->longEtablissement;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->specialite = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ambiance = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->categorie = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->filtre = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add specialite
+     *
+     * @param \Administration\AdministrationBundle\Entity\Specialite $specialite
+     *
+     * @return Etablissement
+     */
+    public function addSpecialite(\Administration\AdministrationBundle\Entity\Specialite $specialite)
+    {
+        $this->specialite[] = $specialite;
+
+        return $this;
+    }
+
+    /**
+     * Remove specialite
+     *
+     * @param \Administration\AdministrationBundle\Entity\Specialite $specialite
+     */
+    public function removeSpecialite(\Administration\AdministrationBundle\Entity\Specialite $specialite)
+    {
+        $this->specialite->removeElement($specialite);
+    }
+
+    /**
+     * Get specialite
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSpecialite()
+    {
+        return $this->specialite;
+    }
+
+    /**
+     * Add ambiance
+     *
+     * @param \Administration\AdministrationBundle\Entity\Ambiance $ambiance
+     *
+     * @return Etablissement
+     */
+    public function addAmbiance(\Administration\AdministrationBundle\Entity\Ambiance $ambiance)
+    {
+        $this->ambiance[] = $ambiance;
+
+        return $this;
+    }
+
+    /**
+     * Remove ambiance
+     *
+     * @param \Administration\AdministrationBundle\Entity\Ambiance $ambiance
+     */
+    public function removeAmbiance(\Administration\AdministrationBundle\Entity\Ambiance $ambiance)
+    {
+        $this->ambiance->removeElement($ambiance);
+    }
+
+    /**
+     * Get ambiance
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAmbiance()
+    {
+        return $this->ambiance;
+    }
+
+    /**
+     * Add categorie
+     *
+     * @param \Administration\AdministrationBundle\Entity\Categorie $categorie
+     *
+     * @return Etablissement
+     */
+    public function addCategorie(\Administration\AdministrationBundle\Entity\Categorie $categorie)
+    {
+        $this->categorie[] = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Remove categorie
+     *
+     * @param \Administration\AdministrationBundle\Entity\Categorie $categorie
+     */
+    public function removeCategorie(\Administration\AdministrationBundle\Entity\Categorie $categorie)
+    {
+        $this->categorie->removeElement($categorie);
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * Add filtre
+     *
+     * @param \Administration\AdministrationBundle\Entity\Filtre $filtre
+     *
+     * @return Etablissement
+     */
+    public function addFiltre(\Administration\AdministrationBundle\Entity\Filtre $filtre)
+    {
+        $this->filtre[] = $filtre;
+
+        return $this;
+    }
+
+    /**
+     * Remove filtre
+     *
+     * @param \Administration\AdministrationBundle\Entity\Filtre $filtre
+     */
+    public function removeFiltre(\Administration\AdministrationBundle\Entity\Filtre $filtre)
+    {
+        $this->filtre->removeElement($filtre);
+    }
+
+    /**
+     * Get filtre
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFiltre()
+    {
+        return $this->filtre;
+    }
+
+  
+
+    /**
+     * Set image
+     *
+     * @param \Administration\AdministrationBundle\Entity\Media $image
+     *
+     * @return Etablissement
+     */
+    public function setImage(\Administration\AdministrationBundle\Entity\Media $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \Administration\AdministrationBundle\Entity\Media
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set carte
+     *
+     * @param \Administration\AdministrationBundle\Entity\Media $carte
+     *
+     * @return Etablissement
+     */
+    public function setCarte(\Administration\AdministrationBundle\Entity\Media $carte = null)
+    {
+        $this->carte = $carte;
+
+        return $this;
+    }
+
+    /**
+     * Get carte
+     *
+     * @return \Administration\AdministrationBundle\Entity\Media
+     */
+    public function getCarte()
+    {
+        return $this->carte;
+    }
+
+    /**
+     * Set fromLundi
+     *
+     * @param string $fromLundi
+     *
+     * @return Etablissement
+     */
+    public function setFromLundi($fromLundi)
+    {
+        $this->fromLundi = $fromLundi;
+
+        return $this;
+    }
+
+    /**
+     * Get fromLundi
+     *
+     * @return string
+     */
+    public function getFromLundi()
+    {
+        return $this->fromLundi;
+    }
+
+    /**
+     * Set toLundi
+     *
+     * @param string $toLundi
+     *
+     * @return Etablissement
+     */
+    public function setToLundi($toLundi)
+    {
+        $this->toLundi = $toLundi;
+
+        return $this;
+    }
+
+    /**
+     * Get toLundi
+     *
+     * @return string
+     */
+    public function getToLundi()
+    {
+        return $this->toLundi;
+    }
+
+    /**
+     * Set fromMardi
+     *
+     * @param string $fromMardi
+     *
+     * @return Etablissement
+     */
+    public function setFromMardi($fromMardi)
+    {
+        $this->fromMardi = $fromMardi;
+
+        return $this;
+    }
+
+    /**
+     * Get fromMardi
+     *
+     * @return string
+     */
+    public function getFromMardi()
+    {
+        return $this->fromMardi;
+    }
+
+    /**
+     * Set toMardi
+     *
+     * @param string $toMardi
+     *
+     * @return Etablissement
+     */
+    public function setToMardi($toMardi)
+    {
+        $this->toMardi = $toMardi;
+
+        return $this;
+    }
+
+    /**
+     * Get toMardi
+     *
+     * @return string
+     */
+    public function getToMardi()
+    {
+        return $this->toMardi;
+    }
+
+    /**
+     * Set toMercredi
+     *
+     * @param string $toMercredi
+     *
+     * @return Etablissement
+     */
+    public function setToMercredi($toMercredi)
+    {
+        $this->toMercredi = $toMercredi;
+
+        return $this;
+    }
+
+    /**
+     * Get toMercredi
+     *
+     * @return string
+     */
+    public function getToMercredi()
+    {
+        return $this->toMercredi;
+    }
+
+    /**
+     * Set fromjeudi
+     *
+     * @param string $fromjeudi
+     *
+     * @return Etablissement
+     */
+    public function setFromjeudi($fromjeudi)
+    {
+        $this->fromjeudi = $fromjeudi;
+
+        return $this;
+    }
+
+    /**
+     * Get fromjeudi
+     *
+     * @return string
+     */
+    public function getFromjeudi()
+    {
+        return $this->fromjeudi;
+    }
+
+    /**
+     * Set toJeudi
+     *
+     * @param string $toJeudi
+     *
+     * @return Etablissement
+     */
+    public function setToJeudi($toJeudi)
+    {
+        $this->toJeudi = $toJeudi;
+
+        return $this;
+    }
+
+    /**
+     * Get toJeudi
+     *
+     * @return string
+     */
+    public function getToJeudi()
+    {
+        return $this->toJeudi;
+    }
+
+    /**
+     * Set fromVendredi
+     *
+     * @param string $fromVendredi
+     *
+     * @return Etablissement
+     */
+    public function setFromVendredi($fromVendredi)
+    {
+        $this->fromVendredi = $fromVendredi;
+
+        return $this;
+    }
+
+    /**
+     * Get fromVendredi
+     *
+     * @return string
+     */
+    public function getFromVendredi()
+    {
+        return $this->fromVendredi;
+    }
+
+    /**
+     * Set toVendredi
+     *
+     * @param string $toVendredi
+     *
+     * @return Etablissement
+     */
+    public function setToVendredi($toVendredi)
+    {
+        $this->toVendredi = $toVendredi;
+
+        return $this;
+    }
+
+    /**
+     * Get toVendredi
+     *
+     * @return string
+     */
+    public function getToVendredi()
+    {
+        return $this->toVendredi;
+    }
+
+    /**
+     * Set fromSamedi
+     *
+     * @param string $fromSamedi
+     *
+     * @return Etablissement
+     */
+    public function setFromSamedi($fromSamedi)
+    {
+        $this->fromSamedi = $fromSamedi;
+
+        return $this;
+    }
+
+    /**
+     * Get fromSamedi
+     *
+     * @return string
+     */
+    public function getFromSamedi()
+    {
+        return $this->fromSamedi;
+    }
+
+    /**
+     * Set toSamedi
+     *
+     * @param string $toSamedi
+     *
+     * @return Etablissement
+     */
+    public function setToSamedi($toSamedi)
+    {
+        $this->toSamedi = $toSamedi;
+
+        return $this;
+    }
+
+    /**
+     * Get toSamedi
+     *
+     * @return string
+     */
+    public function getToSamedi()
+    {
+        return $this->toSamedi;
+    }
+
+    /**
+     * Set fromDimanche
+     *
+     * @param string $fromDimanche
+     *
+     * @return Etablissement
+     */
+    public function setFromDimanche($fromDimanche)
+    {
+        $this->fromDimanche = $fromDimanche;
+
+        return $this;
+    }
+
+    /**
+     * Get fromDimanche
+     *
+     * @return string
+     */
+    public function getFromDimanche()
+    {
+        return $this->fromDimanche;
+    }
+
+    /**
+     * Set toDimanche
+     *
+     * @param string $toDimanche
+     *
+     * @return Etablissement
+     */
+    public function setToDimanche($toDimanche)
+    {
+        $this->toDimanche = $toDimanche;
+
+        return $this;
+    }
+
+    /**
+     * Get toDimanche
+     *
+     * @return string
+     */
+    public function getToDimanche()
+    {
+        return $this->toDimanche;
+    }
+
+    /**
+     * Set fromMercredi
+     *
+     * @param string $fromMercredi
+     *
+     * @return Etablissement
+     */
+    public function setFromMercredi($fromMercredi)
+    {
+        $this->fromMercredi = $fromMercredi;
+
+        return $this;
+    }
+
+    /**
+     * Get fromMercredi
+     *
+     * @return string
+     */
+    public function getFromMercredi()
+    {
+        return $this->fromMercredi;
+    }
+}

@@ -1,0 +1,412 @@
+{% extends 'layout/layoutProjet.html.twig' %}
+{% block body %}
+    <style>
+        .postUtilities.postUtilities-online > li,.money-list > li{
+            padding-right: 0px;
+            padding-left: 0px;
+            margin-left: -1px;
+        }
+        .postUtilities.postUtilities-online > li a{
+            color: #959494;
+        }
+
+    </style>
+    <div class="container outerWrapper">
+        <div class="col-md-3 menu-left menu-left-etab">
+            <!-- right column (268px) -->
+
+            <h3 class="menu-left-heading">
+                <img src="dist/img/ing.png" alt="">
+                Ingrédients
+            </h3>
+
+
+            <section class="numerotel">
+
+                <div class="row center-block">
+                    <div class="col-xs-12">
+                        - 350 g de cassonade
+                    </div>
+                    <div class="col-xs-12">
+                        - 275 g de farine
+                    </div>
+                    <div class="col-xs-12">
+                        - 1 sachet de levure chimique
+                    </div>
+                    <div class="col-xs-12">
+                        - 3 cuillères à café rase de cannelle en poudre
+                    </div>
+                    <div class="col-xs-12">
+                        - 275 g de carottes râpées
+                    </div>
+                    <div class="col-xs-12">
+                        - 4 oeufs
+                    </div>
+                    <div class="col-xs-12">
+                        - 30 cl d'huile
+                    </div>
+                    <div class="col-xs-12">
+                        - 1 cuillère à café d'extrait de vanille
+                    </div>
+                </div>
+
+            </section>
+
+
+            <h3 class="menu-left-heading"><img src="dist/img/preparation.png" alt="">  Préparation  </h3>
+
+
+            <section class="numerotel">
+
+                <div class="row center-block">
+                    <div class="col-xs-12">
+                        <strong>30 Minutes</strong>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <h3 class="menu-left-heading"><img src="dist/img/cuisson.png" alt="">  Cuisson </h3>
+            <section class="adress-etbl">
+                <p style="">
+                    <strong>45 Minutes</strong>
+                </p>
+
+            </section>
+
+            <h3 class="menu-left-heading"><img src="dist/img/difu.png" alt="">  Difficulté </h3>
+            <section class="adress-etbl">
+                <p style="">
+                    <strong>Facile</strong>
+                </p>
+
+            </section>
+
+            <h3 class="menu-left-heading"><img src="dist/img/prix.png" alt="">  Prix </h3>
+            <section class="adress-etbl">
+                <p style="">
+                    <strong>Bon marché</strong>
+                </p>
+
+            </section>
+
+            <h3 class="menu-left-heading"><img src="dist/img/subcategorie-ico.png" alt="">  Subcategories  </h3>
+            <section class="adress-etbl">
+                <p style="">
+                    <strong> Amuse Bouche</strong>
+                </p>
+                <p style="">
+                    <strong>Salées</strong>
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <div class="row">
+                    <p style="text-align:center">
+                        <b>Partager sur :</b>
+                    </p>
+                    <p style="margin:0 auto;">
+                    <ul class="list-inline center-block text-center">
+                        <li> <a href="#" alt="fb">
+                                <img src="dist/img/facebook.png" class="img-responsive" width="32" height="32" alt=""> </a>
+                        </li>
+                        <li> <a href="#" alt="tw">
+                                <img src="dist/img/twitter.png" class="img-responsive" width="32" height="32" alt=""> </a>
+                        </li>
+                        <li> <a href="#" alt="gl">
+                                <img src="dist/img/google-plus.png" class="img-responsive" width="32" height="32" alt=""> </a>
+                        </li>
+                        <li> <a href="#" alt="pr">
+                                <img src="dist/img/pinterest.png" class="img-responsive" width="32" height="32" alt=""> </a>
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </section>
+
+
+
+
+
+        </div> <!-- menu-left -->
+
+
+
+
+
+        <div class="col-md-6 center-content">
+
+
+
+            <section class="article-principal">
+                <h1 class="center-block text-center"> Les plateaux-télé de la rentrée </h1>
+
+                <!-- buttons -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="btn-single-gr center-block">
+                            <a class="btn-single">30 min</a>
+                            <a class="btn-single">Regime</a>
+                            <a class="btn-single">Facile</a>
+                            <a class="btn-single">Plancha</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="add-photo">
+                            <span class="glyphicon glyphicon-plus"></span> Ajouter votre photo
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="row center-block text-center">
+                    <div class="col-md-3">
+                        <div class="raty ratingClass"></div>
+                    </div>
+                    <div class="col-md-3" >
+                        <div class="votes-sr">8.9/10 (25 votes )</div>
+                    </div>
+
+                    <div class="col-md-6 price">
+                        <p class="price-sc">Bon Marché</p>
+                    </div>
+                </div>
+
+
+                <p>
+
+                    <a class="fancybox img-responsive center-block text-center" rel="group" href="dist/img/single2.jpg" alt="single article">
+                        <img class="img-responsive" src="dist/img/single-article-img.jpg" alt="single article">
+                        <span class = "loop"></span>
+
+
+                    </a>
+
+                <div  class="hidden">
+                    <a class="fancybox" href="dist/img/single2.jpg" rel="group"></a>
+                    <a class="fancybox" href="dist/img/single2.jpg" rel="group"></a>
+                </div>
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                </p>
+                <!-- social -->
+
+            </section>
+            <section>
+                <article class="row exprimezVous exprimPublied thePost">
+
+                    <!-- ------------------------------- -->
+                    <div class="postInformations">
+                        <div class="row">
+                            <div class="col-xs-4">
+
+                            </div>
+                            <div class="col-xs-8">
+                                <!-- rating -->
+                                <ul class="list-inline infstats">
+                                    <li>
+                                        <a href="#">
+                                            <img src="dist/img/likeInfIco.png" alt=""> <span class="likeStat">3</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <span class="barSeapara">|</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="dist/img/disLikeInfIco.png" alt=""> <span class="disLikeStat">7</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <span class="barSeapara">|</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="dist/img/commentInfIco.png" alt=""> <span class="commentStat">5</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <span class="barSeapara">|</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="dist/img/shareInfIco.png" alt=""> <span class="shareStat">5</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="list-inline postUtilities postUtilities-online">
+                        <li>
+                            <a href="#" class="likeBtn"> <img src="dist/img/online-likeBtn.png" alt=""> J’aime </a>
+                        </li>
+                        <li>
+                            <a href="#" class="dislikeBtn"> <img src="dist/img/pnline-dislikeBtn.png" alt=""> J’aime pas </a>
+                        </li>
+                        <li>
+                            <a href="#" class="cmtBtn"> <img src="dist/img/online-cmtBtn.png" alt=""> Commenter </a>
+                        </li>
+                        <li>
+                            <a href="#partage-modal" data-toggle="modal" class="shareBtn"> <img src="dist/img/online-shareBtn.png" alt=""> Partage </a>
+                        </li>
+                    </ul>
+                    <h4 class="title-owl text-center"> Voir aussi... </h4>
+
+                    <div id="owl-demo">
+
+                        <div  class="item"><a href="#"><img src="dist/img/owl/slide1.jpg" alt="Owl Image"><p>Recette special 1 pour bla blaaaaa...</p></a></div>
+                        <div  class="item"><a href="#"><img src="dist/img/owl/slide2.jpg" alt="Owl Image"><p>Recette special 1 pour bla blaaaaa....</p></a></div>
+                        <div  class="item"><a href="#"><img src="dist/img/owl/slide3.jpg" alt="Owl Image"><p>Recette special 1 pour bla blaaaaa...</p></a></div>
+                        <div  class="item"><a href="#"><img src="dist/img/owl/slide4.jpg" alt="Owl Image"><p>Recette special 1 pour bla blaaaaa...</p></a></div>
+                        <div  class="item"><a href="#"><img src="dist/img/owl/slide5.jpg" alt="Owl Image"><p>Recette special 1 pour bla blaaaaa...</p></a></div>
+                        <div  class="item"><a href="#"><img src="dist/img/owl/slide6.jpg" alt="Owl Image"><p>Recette special 1 pour bla blaaaaa...</p></a></div>
+                        <div  class="item"><a href="#"><img src="dist/img/owl/slide7.jpg" alt="Owl Image"><p>Recette special 1 pour bla blaaaaa...</p></a></div>
+                        <div  class="item"><a href="#"><img src="dist/img/owl/slide1.jpg" alt="Owl Image"><p>Recette special 1 pour bla blaaaaa...</p></a></div>
+
+                    </div>
+
+                    <div class="showComment">
+                        <a href=""><h5>afficher les commentaires précédents</h5></a>
+
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img src="dist/img/avatar-tiny.jpg" class="media-object" alt="Sample Image">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Mme Doe</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor... ..
+                                    incididunt ulabore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img src="dist/img/avatar-tiny1.jpg" class="media-object" alt="Sample Image">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Mme Doe</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor... ..incididunt ut labore
+                                    et dolore magna aliqua.</p>
+                            </div>
+                        </div><!-- end media -->
+
+                        <form class="form-inline center-block text-center">
+                            <input type="text" class="form-control inputAddComment" placeholder="Ajouter un commentaire...">
+                            <!-- <input type="submit" class="btn-commenter-online pull-right" value="commenter">   -->
+                        </form>
+                        <p class="theLast">
+                            <img src="dist/img/exclamtionPoint.png" alt="exc">
+                <span>
+                  Ecrire un commentaire, utiliser @ pour taguer des amis
+                </span>
+                        </p>
+
+                    </div>
+                    <!-- ------------------------------- -->
+                </article>
+
+            </section>
+
+        </div>  <!-- center-content -->
+
+
+        <div class="col-md-3 menu-right">
+            <!-- right column (268px) -->
+
+
+
+
+            <section class="block-spnsirise center-block text-center">
+
+                <div class="pub">
+                    <img src="dist/img/banner-exemple.jpg" class="img-responsive">
+
+                </div>
+
+            </section>
+
+
+
+
+
+            <h3 class="menu-right-heading"><img src="dist/img/m-n1.png" alt="">  Mieux Noté </h3>
+
+            <section>
+
+                <div class="row img-proximite">
+
+                    <div class="col-xs-5">
+                        <a href=""><img src="dist/img/vaussi1.jpg" alt="prox"></a>
+                    </div>
+                    <div class="col-xs-7">
+
+                        <div class="name">Le carrot special de jour !</div>
+                        <div class="note">8.9/10 (25 votes )</div>
+                        <!-- rating -->
+                        <div class="raty ratingClass"></div>
+
+                    </div>
+                </div>
+
+                <div class="row img-proximite">
+                    <div class="col-xs-5">
+                        <a href=""><img src="dist/img/vaussi2.jpg" alt="prox"></a>
+                    </div>
+                    <div class="col-xs-7">
+
+                        <div class="name">Le carrot special de jour !</div>
+                        <div class="note">8.9/10 (25 votes )</div>
+                        <!-- rating -->
+                        <div class="raty ratingClass"></div>
+
+                    </div>
+                </div>
+
+                <div class="row img-proximite">
+                    <div class="col-xs-5">
+                        <a href=""><img src="dist/img/vaussi3.jpg" alt="prox"></a>
+                    </div>
+                    <div class="col-xs-7">
+
+                        <div class="name">Le carrot special de jour !</div>
+                        <div class="note">8.9/10 (25 votes )</div>
+                        <!-- rating -->
+                        <div class="raty ratingClass"></div>
+
+                    </div>
+                </div>
+
+                <div class="row img-proximite">
+                    <div class="col-xs-5">
+                        <a href=""><img src="dist/img/vaussi4.jpg" alt="prox"></a>
+                    </div>
+                    <div class="col-xs-7">
+
+                        <div class="name">Le carrot special de jour !</div>
+                        <div class="note">8.9/10 (25 votes )</div>
+                        <!-- rating -->
+                        <div class="raty ratingClass"></div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>Liste des recettes <a href="{{ path('recette_new') }}">Ajouter une recette</a></h2>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover dataTables-example" >
+                                <thead>
+                                <tr>
+                                    <th align="center">Ajouté par</th>
+                                    <th align="center">Titre</th>
+                                    <th align="center">image</th>
+                                    <th align="center">Theme</th>
+                                    <th align="center">nationalite</th>
+                                    <th align="center">date</th>
+                                    <th align="center">Couisson</th>
+
+
+                                    <th align="center">Statut</th>
+                                    <th align="center">Operation</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for recette in recettes %}
+                                    <tr class="gradeX">
+                                        <td align="center">{{ recette.auteur.username }}</td>
+                                        <td align="center">{{ recette.nomRecette }}</td>
+                                        <td align="center"><img src="{{ asset(recette.image.WebPath) }}" class="img-responsive img-thumbnail" style="height: 150px;width: 150px;"> </td>
+                                        <td align="center">
+                                            {% for theme in recette.theme %}
+                                                <span class="badge badge-success"> {{ theme.nomTheme }}</span>
+                                            {% endfor %}
+                                        </td>
+                                        <td align="center">{% if recette.nationalite != null  %} {{ recette.nationalite.nomNationalite }} {% endif %}</td>
+                                        <td align="center">{{ recette.dateRecette|date("d/m/Y à H:i:s") }}</td>
+                                        <td align="center">{{ recette.cuissonRecette }}</td>
+
+
+                                        <th align="center">{{ recette.statutRecette }}</th>
+                                        <td align="center">
+                                            <a href="{{ path('recette_edit', {'id': recette.id}) }}">
+                                                <button class="btn btn-sm btn-primary"><i class="fa fa-pencil-square-o " aria-hidden="true"></i>
+                                                </button>
+                                            </a>
+                                            <a href="{{ path('recette_show', {'id': recette.id}) }}">
+                                                <button class="btn btn-sm btn-info"><i class="fa fa-eye" aria-hidden="true"></i>
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

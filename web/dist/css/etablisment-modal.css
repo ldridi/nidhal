@@ -1,0 +1,139 @@
+
+
+#ajout-etablissement-modal.modal-wide .modal-dialog {
+  width: 80%; /* or whatever you wish */
+  max-width: 1282px; 
+  margin: 30px auto;
+}
+#ajout-etablissement-modal .modal-body .heading {
+  font-size: 19px;
+  color: rgb( 201, 83, 47 );
+  font-weight: bold;
+  line-height: 20px;
+}
+#ajout-etablissement-modal .modal-body .heading img{
+	margin-right: 10px;
+}
+#ajout-etablissement-modal .box-etablissement{
+     width: 214px;
+  height: 50px;
+  float: left;
+
+}
+#ajout-etablissement-modal .etablissement article{
+  border: 1px solid #f9f1ee;
+  border-bottom: 2px solid #f4dbd3;
+  background: #fbfbfb;
+  padding: 24px 50px;
+}
+#ajout-etablissement-modal .etablissement .radio{
+  margin-right: 36px;
+}
+#ajout-etablissement-modal .etablissement article label{
+  font-size: 16px;
+  color: black;
+}
+#ajout-etablissement-modal .etablissement h2,
+#ajout-etablissement-modal .etablissement-inf h2{
+  font-size: 14px;
+  color: rgb( 0, 0, 0 );
+  font-weight: bold;
+  line-height: 15px;
+  letter-spacing: 1.2px;
+}
+#ajout-etablissement-modal .firstInf label{
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+#ajout-etablissement-modal .firstInf  .form-group{
+  display: block;
+}
+#ajout-etablissement-modal .firstInf  input[type="text"]{
+  display: block;
+  height: 48px;
+}
+
+#ajout-etablissement-modal .secondInf{
+  border:1px solid #c1c1c1;
+  margin-right: 18px;
+}
+#ajout-etablissement-modal .well{
+  background-color: white;
+}
+
+#ajout-etablissement-modal .secondInf label{
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  width: 100%;
+}
+#ajout-etablissement-modal .secondInf h2{
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+#ajout-etablissement-modal .secondInf  .icheckbox_minimal-grey {
+  float: right;
+}
+#ajout-etablissement-modal .secondInf .checkbox{
+   width: 100%;
+  }   
+
+#ajout-etablissement-modal .btn-valider{
+    background: #c9532f;
+    font-weight: bold;
+    font-size: 27px;
+    width: 391px;
+    height: 68px;
+    line-height: 57px;
+    color: white;
+    margin: 35px 0;
+}
+#ajout-etablissement-modal .btn-valider:hover{
+  color: white;
+}
+
+.btn-photos-et{
+  display: block;
+  padding: 10px 15px;
+  background: red;
+  color: white;
+  font-size: 14px;
+  margin-top: 99px;
+ 
+}
+.btn-prix-et{
+  display: block;
+  padding: 10px 15px;
+  background: blue;
+  color: white;
+  font-size: 14px;
+}
+
+
+
+@media (min-width: 768px){
+  #ajout-etablissement-modal .form-inline .form-control {
+      display: block;
+      width: 100%;
+      border-radius: 0;
+      border:1px solid #b7b7b7;
+  }
+  #ajout-etablissement-modal .form-inline .form-group {
+     display: block; 
+     width: 100%;
+     margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px){
+  #ajout-etablissement-modal .secondInf {
+    max-width:none !important;
+    width: 100% !important;
+  }
+
+}
+
+

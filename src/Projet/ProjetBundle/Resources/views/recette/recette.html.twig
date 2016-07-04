@@ -1,0 +1,709 @@
+{% extends 'layout/layoutProjet.html.twig' %}
+{% block body %}
+    <style type="text/css">
+        body{
+            overflow-x: hidden;
+        }
+        .item-info h6{
+            margin-bottom: -1px;
+            font-size: 13px;
+        }
+        .notes {
+            font-size: 12px;
+            /* color: #b6b6b6; */
+            /* letter-spacing: -0.5px; */
+            line-height: 35px;
+            margin-left: 0px;
+        }
+        .raty.ratingClass {
+            margin-top: 7px;
+        }
+        .prepa,.cuiss{
+            font-size: 13px;
+            margin-left: 0px;
+        }
+        .prixe h4 {margin-top: 3px;margin-left: 3px;}
+        .list-inline.prixe li img{
+            vertical-align: middle;
+        }
+        .block-item{
+            margin-left: 25px !important;
+        }
+        div.outerWrapper div.center-content {
+            padding-left: 11px;
+        }
+    </style>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="{{ asset('dist/img/slider-filter.jpg') }}" alt="Chania">
+                <div class="carousel-caption">
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</h3>
+                    <p class="titleTwo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </div>
+        <!-- form inside carrousel -->
+        <form class="form-inline center-block text-center formInsideCarrousel">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <!-- <label class="sr-only" for="inputSearch">search</label>
+                           <input type="text" class="form-control" id="inputSearch"> -->
+                        <select class="js-example-basic-multiple" id="inputSearch"  multiple="multiple">
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn-search">
+                            <!-- <span class="glyphicon glyphicon-search"></span> --> Rechercher
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container outerWrapper" data-ng-app="myApp" data-ng-controller="recetteController">
+        <div class="col-md-3 menu-left">
+            <!-- right column (268px) -->
+            <h3 class="menu-left-heading-primary">
+                <img src="{{ asset('dist/img/prix.png') }}" alt="">
+                Prix
+            </h3>
+            <div class="menu-filter1">
+                <ul class="horizontal">
+                    <li>
+                        <a class="active" href="">Bon Marché </a>
+                    </li>
+                    <li>
+                        <a href=""> Moyen</a>
+                    </li>
+                    <li>
+                        <a href="">Assez chér</a>
+                    </li>
+                </ul>
+            </div>
+            <h3 class="menu-left-heading-primary">
+                <img src="{{ asset('dist/img/difu.png') }}" alt="">
+                Difficulté
+            </h3>
+            <div class="menu-filter1">
+                <ul class="horizontal">
+                    <li>
+                        <a class="active" href="">Facile </a>
+                    </li>
+                    <li>
+                        <a href="">Moyenne </a>
+                    </li>
+                    <li>
+                        <a href="">Difficile </a>
+                    </li>
+                </ul>
+            </div>
+            <!--  -->
+            <h3 class="menu-left-heading">
+                <img src="{{ asset('dist/img/theme.png') }}" alt="">
+                Thème
+                <a href="#" id="expandContractFilter2" class="expandContractFilter"></a>
+            </h3>
+            <!-- more filters -->
+            <section>
+                <div class="filterByRegion filterByMore filterBysubcategorie " id="filterByTheme">
+                    <form class="form-inline">
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Santé</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">  Pour étudiants </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">
+                                    Pour enfants
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Pour diabétiques</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> 30 minutes </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Entre amoureux</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> A Congeler</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Halal </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">
+                                    Ramadan</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Noel</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Pâques</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Saint valentin</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Halloween</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Sans cuisson</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Sans Œuf</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Sans Glute</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Sans Lactose</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Recette Végétarienne</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- </div> -->
+            </section>
+            <!--  -->
+            <h3 class="menu-left-heading">
+                <img src="{{ asset('dist/img/subcategorie-ico.png') }}" alt="">
+                subcategorie
+                <a href="#" id="expandContractFilter" class="expandContractFilter"></a>
+            </h3>
+            <!-- more filters -->
+            <section>
+                <div class="filterByRegion filterByMore filterBysubcategorie " id="filterByMore">
+                    <form class="form-inline">
+                        <h5>Entrée</h5>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Amuse-Bouche</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Légumes et Gratins </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">
+                                    Mayonnaise et vinaigrettes
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Pains salés</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Salade </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Sauce & Beurre & Pestos</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Soupes & Potages</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Trempettes & Tartinades salées </label>
+                            </div>
+                        </div>
+                        <!-- rrr -->
+                        <h5>Plat Principal</h5>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Déjeuner & Brunch</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Fondues </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">
+                                    Légumineuses
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Pâtes alimentaires</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Pizzas </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Tartes salées</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Riz</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Sandwichs </label>
+                            </div>
+                        </div>
+                        <!-- rrr -->
+                        <h5>Dessert & Cocktails</h5>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Barres et Carrés</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Biscuits </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">
+                                    Bonbons & Chocolats & Friandises
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Brownies</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Confitures & Tartinades sucrées </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Crèmes dessert & mousses & meringues</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Crêpes & Pancakes</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Cupcakes </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Desserts Glacés</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Fruits</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Gâteaux</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Muffins & Pains desserts</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Pâtisseries</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Pouding & Tapiocas</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Tartes</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Yaourts & Fromages</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Cocktails Avec alcool</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Cocktails Sans alcool</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Milkshakes</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- </div> -->
+            </section>
+            <!--  -->
+            <h3 class="menu-left-heading">
+                <img src="{{ asset('dist/img/flag.png') }}" alt="">
+                Nationalité
+                <a href="#" id="expandContractFilter0" class="expandContractFilter"></a>
+            </h3>
+            <!-- more filters -->
+            <section>
+                <div class="filterByRegion filterByMore filterBysubcategorie " id="filterByNAT">
+                    <form class="form-inline">
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label ng-repeat="national in nationalites">
+                                    <input type="checkbox" class="big-checkbox" type="checkbox"  id="#national.id#"/>#national.nationalite#
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- </div> -->
+            </section>
+            <h3 class="menu-left-heading">
+                <img src="{{ asset('dist/img/ing.png') }}" alt="">
+                Ingrédients
+                <a href="#" id="expandContractFilter1" class="expandContractFilter"></a>
+            </h3>
+            <!-- more filters -->
+            <section>
+                <div class="filterByRegion filterByMore filterBysubcategorie " id="filterByIngredient">
+                    <form class="form-inline">
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> Agneau</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Bœuf </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">
+                                    Canard
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Chocolat</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Crème </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Crevettes</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Dinde</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Fromages </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">
+                                    Fruits</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Gibier</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Homard</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Œuf</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Poisson</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Porc</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Poulet</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Saumon</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Tofu</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">Veau</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- </div> -->
+            </section>
+            <!--  -->
+            <!--  -->
+            <h3 class="menu-left-heading">
+                <img src="{{ asset('dist/img/meat.png') }}" alt="">
+                Type de Cuisson
+                <a href="#" id="expandContractFilter3" class="expandContractFilter"></a>
+            </h3>
+            <!-- more filters -->
+            <section>
+                <div class="filterByRegion filterBysubcategorie " id="filterByCuisson"
+                     style="height:300px">
+                    <form class="form-inline">
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes" id="answer" name="answer"> A la vapeur</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">  Barbecue </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">
+                                    Friture
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Micro-ondes</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Plancha </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Plats mijotés</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Au four</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> A poêle </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox">
+                                    Wok</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- </div> -->
+            </section>
+            <h3 class="menu-left-heading">
+                <img src="{{ asset('dist/img/sun.png') }}" alt="">
+                Saison
+                <a href="#" id="expandContractFilter5" class="expandContractFilter"></a>
+            </h3>
+            <!-- more filters -->
+            <section>
+                <div class="filter-weather" id="filterBySaisson">
+                    <form class="form-inline">
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"  value="yes"  name="answer">  Automne</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Eté </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Hiver</label>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="checkbox">
+                                <label><input type="checkbox" class="big-checkbox"> Printemps</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- </div> -->
+            </section>
+        </div>
+        <!-- menu-left -->
+        <div class="col-md-9 center-content">
+            <div class="text-center">
+                <div class="btn-group">
+                    <ul class="list-inline">
+                        <li>
+                            <button type="button" class="btn btn-primary btn-filter btn-first  pull-left">
+                                Entrée
+                            </button>
+                            <button type="button" class="btn btn-primary btn-filter btn-filter-medium noactive  pull-left">
+                                Plat Principal
+                            </button>
+                            <button type="button" class="btn btn-primary btn-filter btn-filter-medium noactive  pull-left">
+                                Dessert & Cocktails
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="row all-items">
+                    <div class="row">
+                        <div data-ng-repeat="recette  in recettes">
+                        <div class="col-sm-6 block-item">
+                            <a href="#" class="icon-bookmark-red"></a>
+                            <img src="#recette.image#" class="img-responsive" alt="" style="width: 401px;height: 253px;">
+                            <!--<h4>Nom de recette</h4>-->
+                            <div  class="item-info">
+                                <div class="row prixe">
+                                    <div class="col-xs-12">
+                                        <h6>#recette.titre#</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <h6>Moyenne</h6>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <h6>#recette.prix#</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <!-- rating -->
+                                        <div class="raty ratingClass"></div>
+                                    </div>
+                                    <div class="col-xs-6 notes">8/20(25 votes)</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 prepa">Préparation: #recette.preparation#</div>
+                                    <div class="col-xs-6 cuiss">Cuisson: #recette.cuisson#</div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- all-items -->
+            </div>
+            <div class="center-block text-center pagination-filter">
+                <ul class="list-inline">
+                    <li> <a href="#" class="active">1</a> </li>
+                    <li> <a href="#">2</a> </li>
+                    <li> <a href="#">...</a> </li>
+                    <li> <a href="#">8</a> </li>
+                </ul>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/angularJS/recetteController.js') }}"></script>
+{% endblock %}

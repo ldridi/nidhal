@@ -1,0 +1,19 @@
+projet_homepage:
+    path:     /
+    defaults: { _controller: ProjetBundle:Default:index }
+
+403:
+    path:     /403
+    defaults: { _controller: ProjetBundle:Default:error403 }
+
+recette:
+    resource: "@ProjetBundle/Resources/config/recetteRouting/recette.yml"
+    prefix:   /recette
+
+location:
+    resource: "@ProjetBundle/Resources/config/recetteRouting/location.yml"
+    prefix:   /location
+
+pages:
+    resource: "@ProjetBundle/Resources/config/recetteRouting/pages.yml"
+    prefix:   /

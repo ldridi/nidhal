@@ -1,0 +1,101 @@
+.all-bookmarks{
+        margin-top: -10px;
+}
+.bookmarks-info{
+        margin: -6px;
+}
+
+.bookmarks-info h6{  
+        margin-bottom: -1px;
+    font-size: 11px
+}
+
+.block-bookmarks {
+	position: relative;
+    background-color: #fbfafa;
+    /*margin: 5px;*/
+    /*margin-right: 1px;*/
+        margin-right: 9px;
+    margin-left: 5px;
+    border-bottom: 3px solid #e8e8e8;
+    width: 49%;
+    /*max-width: 270px;*/
+    /*padding: 10px 0;*/
+    /*padding-top: 0;*/
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    /*padding-top: 0;*/
+    margin-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 5px;
+}
+.block-bookmarks .icon-bookmark-red {
+    display: block;
+    background: url(../img/icon-bookmark.png) center center no-repeat;
+    width: 24px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    margin-right: -124px;
+}
+
+.block-bookmarks .img-responsive{
+	margin: 0 auto;
+}
+.block-bookmarks h6{
+	text-align: left;
+}
+.block-bookmarks .infstats.list-inline > li{
+	padding-right: 0px;
+    padding-left: 0px;
+}
+.block-bookmarks .infstats li a{
+	color: #b6b6b6;
+}
+/*.block-bookmarks .icon-bookmark-red {
+    margin-right: -90px;
+}*/
+.notes{
+    font-size: 11px;
+    /* color: #b6b6b6; */
+    letter-spacing: -0.5px;
+    line-height: 35px;
+    margin-left: -20px;
+}
+.prepa{
+        font-size: 11px;
+    margin-left: -14px;
+}
+.cuiss{
+        font-size: 11px;
+    margin-left: -11px;
+}
+
+.raty.ratingClass{
+    margin-right: 33px;
+}
+.raty.ratingClass img{
+	    margin: -3px;
+    padding: 0px;
+        vertical-align: bottom;
+
+}
+
+
+
+@media (max-width: 1199px) {
+	.block-bookmarks {
+	    width: 98%;
+	}
+}
+
+@media (min-width: 1199px) {
+	.block-bookmarks {
+	    max-width: 270px;
+	}
+}
